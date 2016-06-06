@@ -1,0 +1,155 @@
+// The ui-variables file is provided by base themes provided by Atom.
+//
+// See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
+// for a full listing of what's available.
+@import "ui-variables";
+
+.mongo {
+  display: flex;
+
+  input[type="text"] {
+    width: 100%;
+    background: @base-background-color;
+    color: @text-color;
+    margin: 0px;
+    outline: 0px;
+    padding: 5px 12px;
+    border: 0px;
+    border-radius: 5px;
+    &::-webkit-input-placeholder { color: @text-color-subtle; }
+    &.invalid {
+      color: @background-color-error;
+    }
+  }
+
+  .mongo-right-panel {
+    width: 400px;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 5px;
+    background-color: @base-background-color;
+    box-sizing: border-box;
+
+    .mongo-config-form {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      background-color: @base-background-color;
+      padding: 5px;
+
+      input[type="text"]:first-child {
+        flex: 3;
+      }
+      input[type="text"]:last-child {
+        flex: 2;
+        text-align: right;
+      }
+    }
+
+    .mongo-output-viewer {
+      flex: 10;
+      padding: 5px;
+      margin: 0px 5px;
+      box-sizing: border-box;
+      background-color: @tree-view-background-color;
+      overflow-y: scroll;
+      overflow-x: scroll;
+    }
+
+    .mongo-request-panel {
+      flex: 2;
+      background-color: @base-background-color;
+      display: flex;
+      flex-direction: column;
+      padding: 5px;
+      .target {
+        background-color: @tree-view-background-color;
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        margin-bottom: 5px;
+        padding: 5px;
+        .mongo-dbs {
+          flex: 1;
+          background-color: @base-background-color;
+          margin-right: 5px;
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          padding: 10px;
+
+          .mongo-database-item {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 5px;
+            padding: 5px;
+            &:hover, &.selected {
+              background-color: @background-color-highlight;
+            }
+          }
+        }
+        .mongo-collections {
+          flex: 1;
+          background-color: @base-background-color;
+          margin-right: 5px;
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          padding: 10px;
+
+          .mongo-collection-item {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 5px;
+            padding: 5px;
+            &:hover, &.selected {
+              background-color: @background-color-highlight;
+            }
+          }
+        }
+        .mongo-request-types {
+          flex: 1;
+          background-color: @base-background-color;
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          padding: 10px;
+
+          .mongo-request-type-item {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 5px;
+            padding: 5px;
+            &:hover, &.selected {
+              background-color: @background-color-highlight;
+            }
+          }
+        }
+      }
+
+      .action {
+        background-color: @tree-view-background-color;
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        .mongo-find-panel {
+          display: flex;
+          flex: 1;
+          flex-direction: column;
+          .mongo-find-condition, .mongo-projection {
+            flex: 1;
+            background-color: @base-background-color;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: stretch;
+            padding: 5px;
+          }
+          .mongo-find-condition {
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+  }
+}
